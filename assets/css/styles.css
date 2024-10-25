@@ -863,3 +863,24 @@ screen and (max-device-width:1050px) {
 	background-position: center center;
 	/* 将图片居中显示 */
 }
+
+/* 修改服务容器样式 */
+.services_container {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: flex-start; /* 顶部对齐 */
+  max-width: 1400px; /* 限制最大宽度 */
+  margin: 0 auto; /* 容器居中 */
+  padding: 20px 0; /* 增加上下间距 */
+}
+
+/* 调整列样式 */
+.col-md-8 {
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+.col-md-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}

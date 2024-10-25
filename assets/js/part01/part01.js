@@ -5,11 +5,11 @@
       {
         "animation": true,
         "animationThreshold": 2000,
-        "animationDuration": 1000,
-        "animationEasing": "cubicOut",
+        "animationDuration": 1500,
+        "animationEasing": "cubicInOut",
         "animationDelay": 0,
-        "animationDurationUpdate": 300,
-        "animationEasingUpdate": "cubicOut",
+        "animationDurationUpdate": 1500,
+        "animationEasingUpdate": "cubicInOut",
         "animationDelayUpdate": 0,
         "aria": {
           "enabled": false
@@ -38,28 +38,25 @@
           {
             "type": "graph",
             "layout": "force",
-            "symbolSize": 10,
             "force": {
-              "repulsion": 400,
-              "gravity": 0.1,
-              "edgeLength": 200,
-              "friction": 0.6,
+              "repulsion": 800, // 斥力
+              "gravity": 0.1, // 减小向心力使运动更自由
+              "edgeLength": 300, // 连线长度
+              "friction": 0.2, // 减小摩擦力使运动更持久
               "layoutAnimation": true
             },
+            "symbolSize": 30, // 固定节点大小
             "label": {
               "show": true,
               "position": "right",
-              "distance": 5,
-              "fontSize": 12,
-              "formatter": "{b}",
+              "distance": 10,
+              "fontSize": 14,
               "color": "#333"
             },
             "lineStyle": {
-              "show": true,
               "width": 1,
               "opacity": 0.6,
               "curveness": 0.3,
-              "type": "solid",
               "color": "source"
             },
             "roam": true,
@@ -795,23 +792,6 @@
                 "category": 7
               },
               {
-                "id": "27",
-                "name": "腾势D9",
-                "symbolSize": 20,
-                "x": 217.80992553861597,
-                "y": 680.6824921097074,
-                "value": 56708,
-                "itemStyle": {
-                  "color":"#CD222A"
-                },
-                "label": {
-                  "normal": {
-                    "show": true
-                  }
-                },
-                "category": 1
-              },
-              {
                 "id": "28",
                 "name": "红旗E-QM5",
                 "symbolSize": 20,
@@ -1436,15 +1416,6 @@
                 }
               },
               {
-                "source": "brand_1",
-                "target": "27",
-                "lineStyle": {
-                  "color":"#CD222A",
-                  "width": 1,
-                  "curveness": 0.3
-                }
-              },
-              {
                 "source": "brand_9",
                 "target": "28",
                 "lineStyle": {
@@ -1753,10 +1724,13 @@
             "selectorPosition": "auto",
             "selectorItemGap": 7,
             "selectorButtonGap": 10,
-            "orient": "vertical",
-            "right": 10,
-            "top": "center",
-            "itemGap": 8
+            "orient": "horizontal",
+            "top": 10,
+            "left": "center",
+            "itemGap": 20,
+            "textStyle": {
+              "fontSize": 14
+            }
           }
         ],
         "tooltip": {
@@ -1796,3 +1770,16 @@
         ]
       };
   chart_4eaa364a159c406194abd4e507a4402c.setOption(option_4eaa364a159c406194abd4e507a4402c);
+
+  // 定时轻微扰动系统
+  setInterval(function() {
+    var newOption = {
+      series: [{
+        force: {
+          gravity: 0.1 + Math.random() * 0.05, // 随机轻微改变向心力
+          repulsion: 800 + Math.random() * 50 // 随机轻微改变斥力
+        }
+      }]
+    };
+    chart_4eaa364a159c406194abd4e507a4402c.setOption(newOption);
+  }, 2000); // 每2秒更新一次
