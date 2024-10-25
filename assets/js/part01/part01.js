@@ -37,24 +37,22 @@
         "series": [
           {
             "type": "graph",
-            "layout": "circular",
+            "layout": "force",
             "symbolSize": 10,
-            "circular": {
-              "rotateLabel": true
-            },
             "force": {
-              "repulsion": 50,
-              "gravity": 0.2,
-              "edgeLength": 30,
+              "repulsion": 400,
+              "gravity": 0.1,
+              "edgeLength": 200,
               "friction": 0.6,
               "layoutAnimation": true
             },
             "label": {
               "show": true,
               "position": "right",
-              "color": "#333333",
-              "margin": 8,
-              "fontSize": 12
+              "distance": 5,
+              "fontSize": 12,
+              "formatter": "{b}",
+              "color": "#333"
             },
             "lineStyle": {
               "show": true,
@@ -795,23 +793,6 @@
                   }
                 },
                 "category": 7
-              },
-              {
-                "id": "26",
-                "name": "熊猫",
-                "symbolSize": 20,
-                "x": 753.37439028249,
-                "y": 610.5358750321502,
-                "value": 62399,
-                "itemStyle": {
-                  "color":"#000000"
-                },
-                "label": {
-                  "normal": {
-                    "show": true
-                  }
-                },
-                "category": 8
               },
               {
                 "id": "27",
@@ -1771,7 +1752,11 @@
             "selector": false,
             "selectorPosition": "auto",
             "selectorItemGap": 7,
-            "selectorButtonGap": 10
+            "selectorButtonGap": 10,
+            "orient": "vertical",
+            "right": 10,
+            "top": "center",
+            "itemGap": 8
           }
         ],
         "tooltip": {
