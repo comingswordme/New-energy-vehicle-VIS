@@ -13,127 +13,127 @@ function initializeMap02(containerId, topoJsonUrl) {
             const data020201 =
                 [{
                     'hc-key': 'cn-bj',
-                    value: 21893095,
+                    value: 2189.3095,
                     num: 712049
                 }, {
                     'hc-key': 'cn-tj',
-                    value: 13866009,
+                    value: 1386.6009,
                     num: 374669
                 }, {
                     'hc-key': 'cn-hb',
-                    value: 74610235,
+                    value: 7461.0235,
                     num: 437083
                 }, {
                     'hc-key': 'cn-sx',
-                    value: 34915616,
+                    value: 3491.5616,
                     num: 265323
                 }, {
                     'hc-key': 'cn-nm',
-                    value: 24049155,
+                    value: 2404.9155,
                     num: 64120
                 }, {
                     'hc-key': 'cn-ln',
-                    value: 42591407,
+                    value: 4259.1407,
                     num: 128119
                 }, {
                     'hc-key': 'cn-jl',
-                    value: 24073453,
+                    value: 2407.3453,
                     num: 72990
                 }, {
                     'hc-key': 'cn-hl',
-                    value: 31850088,
+                    value: 3185.0088,
                     num: 1816
                 }, {
                     'hc-key': 'cn-sh',
-                    value: 24870895,
+                    value: 2487.0895,
                     num: 998341
                 }, {
                     'hc-key': 'cn-js',
-                    value: 84748016,
+                    value: 8474.8016,
                     num: 979869
                 }, {
                     'hc-key': 'cn-zj',
-                    value: 64567588,
+                    value: 6456.7588,
                     num: 1339482
                 }, {
                     'hc-key': 'cn-ah',
-                    value: 61027171,
+                    value: 6102.7171,
                     num: 410299
                 }, {
                     'hc-key': 'cn-fj',
-                    value: 41540086,
+                    value: 4154.0086,
                     num: 362061
                 }, {
                     'hc-key': 'cn-jx',
-                    value: 45188635,
+                    value: 4518.8635,
                     num: 235562
                 }, {
                     'hc-key': 'cn-sd',
-                    value: 101527453,
+                    value: 10152.7453,
                     num: 906464
                 }, {
                     'hc-key': 'cn-he',
-                    value: 99365519,
+                    value: 9936.5519,
                     num: 836891
                 }, {
                     'hc-key': 'cn-hu',
-                    value: 57752557,
+                    value: 5775.2557,
                     num: 395896
                 }, {
                     'hc-key': 'cn-hn',
-                    value: 66444864,
+                    value: 6644.4864,
                     num: 362991
                 }, {
                     'hc-key': 'cn-gd',
-                    value: 126012510,
+                    value: 12601.2510,
                     num: 1998110
                 }, {
                     'hc-key': 'cn-gx',
-                    value: 50126804,
+                    value: 5012.6804,
                     num: 436217
                 }, {
                     'hc-key': 'cn-ha',
-                    value: 10081232,
+                    value: 1008.1232,
                     num: 186127
                 }, {
                     'hc-key': 'cn-cq',
-                    value: 32054159,
+                    value: 3205.4159,
                     num: 276327
                 }, {
                     'hc-key': 'cn-sc',
-                    value: 83674866,
+                    value: 8367.4866,
                     num: 544957
                 }, {
                     'hc-key': 'cn-gz',
-                    value: 38562148,
+                    value: 3856.2148,
                     num: 172483
                 }, {
                     'hc-key': 'cn-yn',
-                    value: 47209277,
+                    value: 4720.9277,
                     num: 213452
                 }, {
                     'hc-key': 'cn-xz',
-                    value: 3648100,
+                    value: 364.8100,
                     num: 338
                 }, {
                     'hc-key': 'cn-sa',
-                    value: 39528999,
+                    value: 3952.8999,
                     num: 304389
                 }, {
                     'hc-key': 'cn-gs',
-                    value: 25019831,
+                    value: 2501.9831,
                     num: 57558
                 }, {
                     'hc-key': 'cn-qh',
-                    value: 5923957,
+                    value: 592.3957,
                     num: 10836
                 }, {
                     'hc-key': 'cn-nx',
-                    value: 7202654,
+                    value: 720.2654,
                     num: 24328
                 }, {
                     'hc-key': 'cn-xj',
-                    value: 25852345,
+                    value: 2585.2345,
                     num: 46217
                 }
                 ];
@@ -172,6 +172,16 @@ function initializeMap02(containerId, topoJsonUrl) {
                 'cn-xj': '新疆维吾尔自治区'
             };
             
+            // 计算每万人口的新能源汽车保有量比值
+            data020201.forEach(item => {
+                item.ratio = (item.num / item.value);  // 每万人拥有的新能源汽车数量
+            });
+
+            // 获取最大和最小比值用于颜色映射
+            const ratios = data020201.map(item => item.ratio);
+            const minRatio = Math.min(...ratios);
+            const maxRatio = Math.max(...ratios);
+
             // 创建地图配置
             const mapOption = {
                 chart: {
@@ -184,9 +194,9 @@ function initializeMap02(containerId, topoJsonUrl) {
                 },
 
                 title: {
-                    text: '全国各省 新能源汽车数量/人口 比例示意图',
+                    text: '全国各省新能源汽车保有量与人口比值分布',
                     style: {
-                        fontSize: '16px' // 字体大小  
+                        fontSize: '16px'
                     }
                 },
 
@@ -198,14 +208,19 @@ function initializeMap02(containerId, topoJsonUrl) {
                 },
 
                 colorAxis: {
-                    min: 10,
+                    min: minRatio,
+                    max: maxRatio,
                     stops: [
-                        [0, '#A4E2C6'],
-                        [0.15, '#789262'],
-                        [0.75, '#057748']
-                    ]
-
-
+                        [0, '#EEEEFF'],  // 最低值颜色
+                        [0.5, '#4169E1'],  // 中间值颜色
+                        [1, '#000080']   // 最高值颜色
+                    ],
+                    labels: {
+                        format: '{value:.1f}',  // 显示一位小数
+                        style: {
+                            fontSize: '12px'
+                        }
+                    }
                 },
                 plotOptions: {
                     mapbubble: {
@@ -229,11 +244,12 @@ function initializeMap02(containerId, topoJsonUrl) {
                     borderRadius: 3,
                     shadow: true,
                     formatter: function() {
+                        const ratio = (this.point.num / this.point.value).toFixed(2);
                         return `<div style="font-weight: bold; color: #333;">
-                                    <span style="font-size: 16px; color: #000;">${this.point.name}</span><br/>
-                                    <span style="color: #2f7ed8;">比值：${this.point.y.toFixed(2)} 辆/万人</span><br/>
+                                    <span style="font-size: 16px; color: #000;">${provinceNameMap[this.point['hc-key']]}</span><br/>
+                                    <span style="color: #2f7ed8;">比值：${ratio} 辆/万人</span><br/>
                                     <span style="color: #0d233a;">新能源汽车保有量：${this.point.num.toLocaleString()} 辆</span><br/>
-                                    <span style="color: #0d233a;">人口数量：${this.point.population.toLocaleString()} 人</span>
+                                    <span style="color: #0d233a;">人口数量：${this.point.value.toLocaleString()} 万人</span>
                                 </div>`;
                     },
                     useHTML: true,
@@ -256,13 +272,19 @@ function initializeMap02(containerId, topoJsonUrl) {
                 },
 
                 series: [{
-                    data: data020201,
-                    name: '新能源汽车保有量和人口数量',
+                    data: data020201.map(function (item) {
+                        return {
+                            'hc-key': item['hc-key'],
+                            value: item.ratio,  // 使用比值作为颜色映射的值
+                            num: item.num,      // 新能源汽车数量
+                            value: item.value   // 人口数量(万人)
+                        };
+                    }),
+                    name: '新能源汽车保有量/万人口',
                     states: {
                         hover: {
                             color: '#11DA55'
-                        },
-
+                        }
                     },
                     dataLabels: {
                         enabled: true,
@@ -320,7 +342,7 @@ function initializeMap02(containerId, topoJsonUrl) {
                                     <span style="font-size: 16px; color: #000;">${this.point.name}</span><br/>
                                     <span style="color: #2f7ed8;">比值：${this.point.y.toFixed(2)} 辆/万人</span><br/>
                                     <span style="color: #0d233a;">新能源汽车保有量：${this.point.num.toLocaleString()} 辆</span><br/>
-                                    <span style="color: #0d233a;">人口数量：${this.point.population.toLocaleString()} 人</span>
+                                    <span style="color: #0d233a;">人口数量：${this.point.population.toLocaleString()} 万人</span>
                                 </div>`;
                     },
                     useHTML: true,
@@ -340,9 +362,9 @@ function initializeMap02(containerId, topoJsonUrl) {
                     data: data020201.map(function (item) {
                         return {
                             name: provinceNameMap[item['hc-key']],
-                            y: (item.num / item.value) * 10000,
-                            num: item.num,
-                            population: item.value
+                            y: item.num / item.value,  // 每万人的新能源汽车数量
+                            num: item.num,             // 新能源汽车数量
+                            population: item.value     // 人口数量(万人)
                         };
                     }).sort((a, b) => b.y - a.y)
                 }]
@@ -369,6 +391,9 @@ function initializeMap02(containerId, topoJsonUrl) {
         }
     })();
 }
+
+
+
 
 
 
