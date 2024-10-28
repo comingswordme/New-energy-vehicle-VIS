@@ -312,15 +312,23 @@ function initializeMap02(containerId, topoJsonUrl) {
                     }
                 },
                 xAxis: {
-                    type: 'population',
+                    type: 'linear',  // 修改：将 'population' 改为 'linear'
                     title: {
                         text: '新能源汽车保有量/万人口（辆/万人）'
                     }
                 },
                 yAxis: {
                     type: 'category',
-                    axisLabel: {
-                        rotate: 30
+                    title: {
+                        text: '省份'
+                    },
+                    labels: {
+                        style: {
+                            fontSize: '12px'
+                        },
+                        // 确保标签完全显示
+                        overflow: 'allow',
+                        crop: false
                     }
                 },
                 tooltip: {
