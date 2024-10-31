@@ -62,11 +62,7 @@ body {
 	-webkit-overflow-scrolling: touch;
 	line-height: 1.4;
 	font-family: 'Open Sans', sans-serif;
-
-
-
 }
-
 
 .logo a {
 	display: inline-block;
@@ -78,24 +74,18 @@ body {
 }
 
 .logo-link img {
-	/* 假设你想让Logo宽度为100px，高度会自动按照图片原始比例缩放 */
 	width: 100px;
 	height: 50px;
-	/* 垂直对齐 */
 }
 
 .logo-link,
 .logo-text {
-	/* 确保Logo链接和文本都是内联块级元素，以便并排显示 */
 	display: inline-block;
 	vertical-align: middle;
-	/* 垂直对齐 */
 }
 
 .logo-text {
-	/* 假设你想让文字大小为24px */
 	font-size: 20px;
-	/* 你可以添加一些左边距，以便在Logo和文字之间留出空间 */
 	margin-left: 7px;
 }
 
@@ -141,7 +131,6 @@ body {
 	text-align: center;
 }
 
-
 .col-md-4 {
 	padding-bottom: 20px;
 }
@@ -165,13 +154,9 @@ body {
 	background: #2b2b2b;
 }
 
-
-
 .custom-quote {
 	background-color: #33471b78;
-	/* 你可以修改为任何你想要的颜色 */
 	color: #ffffff;
-	/* 你可以修改为任何你想要的颜色 */
 }
 
 .navbar-default {
@@ -240,9 +225,7 @@ p.large {
 	text-align: center;
 	color: #1c3b0e;
 	font-weight: bold;
-	/* 使字体加粗 */
 	font-family: 'Microsoft YaHei', sans-serif;
-	/* 使用微软雅黑字体，如果系统中没有微软雅黑，则回退到无衬线字体 */
 }
 
 strong {
@@ -347,7 +330,6 @@ a:after {
 }
 
 #about {
-
 	padding: 100px 0;
 }
 
@@ -435,13 +417,11 @@ a:after {
 }
 
 #contact {
-
 	padding-top: 10px;
 	padding-bottom: 100px;
 }
 
 #contact .form {
-
 	padding: 30px 0;
 }
 
@@ -656,7 +636,6 @@ ul.social-buttons li a:active {
 
 .overlay figcaption a {
 	position: absolute;
-	/* top: 10px; */
 	bottom: 10px;
 	right: 30px;
 	background: #000;
@@ -762,16 +741,11 @@ screen and (max-device-width:1050px) {
 	cursor: pointer;
 }
 
-
 .body1 {
 	position: relative;
-	/* 设置定位，以便伪元素能够相对于这个元素定位 */
 	width: 100%;
-	/* 或者您希望的任何宽度 */
 	padding-top: 66.6666%;
-	/* 假设图片的宽高比是 3:2，则 padding-top = (2/3) * 100% */
 	overflow: hidden;
-	/* 隐藏超出元素的内容 */
 }
 
 .body1::before {
@@ -783,33 +757,30 @@ screen and (max-device-width:1050px) {
 	width: 70%;
 	height: 70%;
 	background-image: url('../img/about/panda1.png');
-	/* 背景图片路径 */
 	background-size: contain;
-	/* 使背景图片等比缩放，同时保持其宽高比 */
 	background-repeat: no-repeat;
 	background-position: center center;
-	/* 将图片居中显示 */
 }
 
 /* 修改服务容器样式 */
 .services_container {
-  display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: flex-start; /* 顶部对齐 */
-  max-width: 1400px; /* 限制最大宽度 */
-  margin: 0 auto; /* 容器居中 */
-  padding: 20px 0; /* 增加上下间距 */
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 20px 0;
 }
 
 /* 调整列样式 */
 .col-md-8 {
-  flex: 0 0 66.666667%;
-  max-width: 66.666667%;
+	flex: 0 0 66.666667%;
+	max-width: 66.666667%;
 }
 
 .col-md-4 {
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
 }
 
 #background-animation {
@@ -820,9 +791,9 @@ screen and (max-device-width:1050px) {
 	height: 100%;
 	z-index: 0;
 	color: greenyellow;
-  }
-  
-  .main-content {
+}
+
+.main-content {
 	position: relative;
 	z-index: 1;
-  }
+}
