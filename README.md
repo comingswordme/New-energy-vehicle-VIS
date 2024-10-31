@@ -1,3 +1,2 @@
-# aiPanda
-熊猫数据可视化
+# 参考项目：aiPanda
 网页查看： https://asaandme.github.io/aiPanda/
