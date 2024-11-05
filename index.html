@@ -379,16 +379,30 @@
 
             <div style="padding: 15px;">
               <blockquote class="layui-elem-quote layui-text custom-quote" style="border-left: 5px solid #dcc672;">
-                <b>圈养大熊猫分布:</b>
-                据《全国第四次大熊猫调查报告》中《第九章 圈养大熊猫种群状况》可知，截至2013年12月，全国圈养大熊猫共计375只，其中雄性166只，雌性209只。大熊猫圈养种群分布在11个繁育单位，其中中国保护大熊猫研究中心、成都大熊猫繁育研究基地两个繁育单位的大熊猫种群数量为321只，占全国圈养种群总数的85.6%，是我国大熊猫圈养种群的主体。到了2024年，全球圈养大熊猫种群数量以及能够达到728只，这体现了大熊猫人工繁育技术的飞速发展，有利于大熊猫圈养种群的自我维持和健康发展。
+                <b>调研消费者购车预算变化:</b>10-30万主力预算区间份额超六成，高端消费份额增长明显；较为缓慢复苏的经济，地缘政治风险以及股市和房地产市场表现不佳等因素，导致消费信心低迷。用户对消费要求日益严苛、谨慎，但他们并没有放弃对更美好事物的追求。相比2021年，2023年购车预算10万以下的用户占比明显下降，而20-50万区间用户占比均上升了6.7%。
               </blockquote>
             </div>
-           
-            <div class="col-md-7">
-              <div id="part020301" style="width:650px;height:400px;"></div>
+
+
+            <div class="col-md-5">
+              <div id="part020302" style="width:500px;height:400px;"></div>
             </div>
             <div class="col-md-5">
-              <div id="part020302" style="width:400px;height:400px;"></div>
+              <div id="part020303" style="width:500px;height:400px;"></div>
+            </div>
+            <div class="col-md-5">
+              <div id="part020304" style="width:500px;height:400px;"></div>
+            </div>
+
+            <div class="col-md-12" style="margin:auto;left:0%;">
+              <div style="padding: 15px;">
+                <blockquote class="layui-elem-quote layui-text custom-quote" style="border-left: 5px solid #83962f;">
+                  <b>分城市级别来看:</b>分城市级别来看，2023年调研用户中，高线城市主力预算区间为20-30万，其中，一线和新一线城市30万以上预算用户占比，均达到30%以上。低线城市的主力预算区间为10-20万。<br />
+                </blockquote>
+              </div>
+              <div id="part0304" style="height:520px;margin:auto;left:0%;"></div>
+              <script type="text/javascript" src="assets/js/part03/part0304.js">
+              </script>
             </div>
 
             <script type="text/javascript">
@@ -398,150 +412,6 @@
                 ).then(response => response.json());
 
                 // Create the chart
-                var maphart = Highcharts.mapChart('part020301', {
-                  chart: {
-                    map: topology,
-                    margin: 1,
-                    width:700,
-                    height:400
-                  },
-
-                  title: {
-                    text: '国内圈养大熊猫数量统计',
-                    floating: true,
-                    style: {
-                      textOutline: '5px contrast', fontSize: '16px' // 字体大小
-                    }
-                  },
-
-                  //subtitle: {
-                  //  text: 'Map markers in Highcharts',
-                  //  floating: true,
-                  //y: 36,
-                  //style: {
-                  //     textOutline: '5px contrast'
-                  // }
-                  // },
-
-                  mapNavigation: {
-                    enabled: true,
-                    buttonOptions: {
-                      alignTo: 'spacingBox',
-                      verticalAlign: 'bottom'
-                    }
-                  },
-
-                  mapView: {
-                    padding: [0, 0, 85, 0]
-                  },
-
-                  legend: {
-                    floating: true,
-                    backgroundColor: '#ffffffcc'
-                  },
-
-                  plotOptions: {
-                    mappoint: {
-                      keys: ['lat', 'lon', 'name', 'num'],
-                      marker: {
-                        lineWidth: 1,
-                        lineColor: '#000',
-                        symbol: 'mapmarker',
-                        radius: 8
-                      },
-                      dataLabels: {
-                        enabled: false
-                      }
-                    }
-                  },
-
-                  tooltip: {
-                    headerFormat: null,
-                    pointFormat: '{point.name}<br>{point.num}'
-
-                  },
-
-                  series: [{
-                    allAreas: true,
-                    name: 'Countries',
-                    states: {
-                      inactive: {
-                        opacity: 1
-                      }
-                    },
-                    dataLabels: {
-                      enabled: false,
-
-                    },
-                    enableMouseTracking: true,
-                    showInLegend: false,
-                    borderColor: 'rgba(0, 0, 0, 0.25)'
-                  }, {
-                    showInLegend: false,
-                    name: '动物园',
-                    color: '#96c02f',
-                    data: [
-                      [
-                        30.00,
-                        103.00,
-                        '中国保护大熊猫研究中心',
-                        193
-                      ], [
-                        30.74,
-                        104.14,
-                        '成都大熊猫繁育研究基地',
-                        128
-                      ], [
-                        34.04,
-                        108.31,
-                        '陕西省珍稀野生动物抢救饲养研究中心',
-                        21
-                      ], [
-                        39.95,
-                        116.34,
-                        '北京动物园',
-                        12
-                      ], [
-                        29.51,
-                        106.50,
-                        '重庆动物园',
-                        8
-                      ], [
-                        36.05,
-                        103.83,
-                        '兰州动物园',
-                        2
-                      ], [
-                        26.09,
-                        119.30,
-                        '海峡大熊猫交流研究中心(福州)',
-                        1
-                      ], [
-                        31.19,
-                        121.36,
-                        '上海动物园',
-                        1
-                      ], [
-                        22.23,
-                        113.17,
-                        '香港海洋公园',
-                        4
-                      ], [
-                        22.12,
-                        113.56,
-                        '澳门环石排湾郊野公园',
-                        2
-                      ], [
-                        24.99,
-                        121.58,
-                        '台北市动物园',
-                        3
-                      ],
-                    ],
-                    type: 'mappoint'
-                  },]
-                });
-
                 var pieChart = Highcharts.chart('part020302', {
                   chart: {
                     plotBackgroundColor: null,
@@ -549,13 +419,28 @@
                     plotShadow: false,
                     type: 'pie',
                     backgroundColor: 'transparent',
-                    width:500,
-                  
+                    width:300,
+                    events: {
+                      load: function () {
+                        var chart = this;
+                        chart.renderer.text('2021', chart.plotLeft + chart.plotWidth / 2, chart.plotTop + chart.plotHeight / 2)
+                                .attr({
+                                  zIndex: 5, // 设置文本的 zIndex，以确保它在其他元素之上
+                                  align: 'center'
+                                })
+                                .css({
+                                  fontSize: '24px', // 设置字体大小
+                                  color: '#000' // 设置字体颜色
+                                })
+
+                                .add(); // 添加到图表中
+                      }
+                    }
                   },
                   title: {
-                    text: '大熊猫分布比例',
+                    text: '',
                     style: {
-                        fontSize: '16px' // 字体大小  
+                      fontSize: '16px' // 字体大小
                     }
                   },
                   tooltip: {
@@ -568,72 +453,215 @@
                         enabled: false
                       },
                       showInLegend: true,
-                      innerSize: '30%', // 这里是相对于饼图半径的百分比
+                      innerSize: '50%', // 这里是相对于饼图半径的百分比
                     }
                   },
-                 
+
                   series: [{
-                    name: 'Population',
+                    name: 'Percentage',
                     colorByPoint: true,
 
                     data: [{
-                      name: '中国保护大熊猫研究中心',
-                      y: 193,
-                      color:"#83962f",
+                      name: '十万及以下',
+                      y: 15.1,
+                      color:"#13548D",
                     }, {
-                      name: '成都大熊猫繁育研究基地',
-                      y: 128,
-                      color:"#96c02f",
+                      name: '10-20万（含）',
+                      y: 39.0,
+                      color:"#3EB7E3",
 
                     }, {
-                      name: '陕西省珍稀野生动物抢救饲养研究中心',
-                      y: 21,
-                      color:  "#d0d13d",
+                      name: '20-30万（含）',
+                      y: 26.0,
+                      color:"#159134",
                     }, {
-                      name: '北京动物园',
-                      y: 12,
-                      color: "#c5d366",
+                      name: '30-50万（含）',
+                      y: 14.7,
+                      color: "#84E65D",
                     }, {
-                      name: '重庆动物园',
-                      y: 8,
-                      color: "#87c47b",
+                      name: '50-100万（含）',
+                      y: 3.7,
+                      color: "#E7B153",
                     }, {
-                      name: '香港海洋公园',
-                      y: 4,
-                      color:  "#90af82",
-                    }, {
-                      name: '澳门环石排湾郊野公园',
-                      y: 4,
-                      color: "#94c1b6",
-                    }, {
-                      name: '台北市立动物园',
-                      y: 3,
-                      color:"#6b969a",
-                    }, {
-                      name: '兰州动物园',
-                      y: 2,
-                      color: "#dcc672",
-                    }, {
-                      name: '海峡大熊猫交流研究中心(福州)',
-                      y: 1,
-                      color: "#e0ba19",
-                    }, {
-                      name: '上海动物园',
-                      y: 1,
-                      color:  "#c69519",
+                      name: '100万以上',
+                      y: 1.5,
+                      color:  "#EA521A",
                     },]
                   }],
                   roseType: 'radius', // 使用半径缩放
                 });
+
+
+                var pieChart = Highcharts.chart('part020303', {
+                  chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                    backgroundColor: 'transparent',
+                    width:300,
+                    events: {
+                      load: function () {
+                        var chart = this;
+                        chart.renderer.text('2022', chart.plotLeft + chart.plotWidth / 2, chart.plotTop + chart.plotHeight / 2)
+                                .attr({
+                                  zIndex: 5, // 设置文本的 zIndex，以确保它在其他元素之上
+                                  align: 'center'
+                                })
+                                .css({
+                                  fontSize: '24px', // 设置字体大小
+                                  color: '#000' // 设置字体颜色
+                                })
+
+                                .add(); // 添加到图表中
+                      }
+                    }
+                  },
+                  title: {
+                    text: '',
+                    style: {
+                      fontSize: '16px' // 字体大小
+                    }
+                  },
+                  tooltip: {
+                    pointFormat: '{series.name}: <b>{point.y}</b>'
+                  }, plotOptions: {
+                    pie: {
+                      allowPointSelect: true,
+                      cursor: 'pointer',
+                      dataLabels: {
+                        enabled: false
+                      },
+                      showInLegend: true,
+                      innerSize: '50%', // 这里是相对于饼图半径的百分比
+                    }
+                  },
+
+                  series: [{
+                    name: 'Percentage',
+                    colorByPoint: true,
+
+                    data: [{
+                      name: '十万及以下',
+                      y: 8.8,
+                      color:"#13548D",
+                    }, {
+                      name: '10-20万（含）',
+                      y: 32.5,
+                      color:"#3EB7E3",
+
+                    }, {
+                      name: '20-30万（含）',
+                      y: 34.0,
+                      color:"#159134",
+                    }, {
+                      name: '30-50万（含）',
+                      y: 19.7,
+                      color: "#84E65D",
+                    }, {
+                      name: '50-100万（含）',
+                      y: 4.1,
+                      color: "#E7B153",
+                    }, {
+                      name: '100万以上',
+                      y: 0.9,
+                      color:  "#EA521A",
+                    },]
+                  }],
+                  roseType: 'radius', // 使用半径缩放
+                });
+
+                var pieChart = Highcharts.chart('part020304', {
+                  chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                    backgroundColor: 'transparent',
+                    width:300,
+                    events: {
+                      load: function () {
+                        var chart = this;
+                        chart.renderer.text('2023', chart.plotLeft + chart.plotWidth / 2, chart.plotTop + chart.plotHeight / 2)
+                                .attr({
+                                  zIndex: 5, // 设置文本的 zIndex，以确保它在其他元素之上
+                                  align: 'center'
+                                })
+                                .css({
+                                  fontSize: '24px', // 设置字体大小
+                                  color: '#000' // 设置字体颜色
+                                })
+
+                                .add(); // 添加到图表中
+                      }
+                    }
+                  },
+                  title: {
+                    text: '',
+                    style: {
+                      fontSize: '16px' // 字体大小
+                    }
+                  },
+                  tooltip: {
+                    pointFormat: '{series.name}: <b>{point.y}</b>'
+                  }, plotOptions: {
+                    pie: {
+                      allowPointSelect: true,
+                      cursor: 'pointer',
+                      dataLabels: {
+                        enabled: false
+                      },
+                      showInLegend: true,
+                      innerSize: '50%', // 这里是相对于饼图半径的百分比
+                    }
+                  },
+
+                  series: [{
+                    name: 'Percentage',
+                    colorByPoint: true,
+
+                    data: [{
+                      name: '十万及以下',
+                      y: 5.5,
+                      color:"#13548D",
+                    }, {
+                      name: '10-20万（含）',
+                      y: 29.0,
+                      color:"#3EB7E3",
+
+                    }, {
+                      name: '20-30万（含）',
+                      y: 32.7,
+                      color:"#159134",
+                    }, {
+                      name: '30-50万（含）',
+                      y: 21.4,
+                      color: "#84E65D",
+                    }, {
+                      name: '50-100万（含）',
+                      y: 9.7,
+                      color: "#E7B153",
+                    }, {
+                      name: '100万以上',
+                      y: 2.0,
+                      color:  "#EA521A",
+                    },]
+                  }],
+                  roseType: 'radius', // 使用半径缩放
+                });
+
 
                 maphart.series[1].points.forEach(point => {
                   point.graphic.element.onclick = function () {
                     var name = point.name;
                     var data = pieChart.series[0].data;
                     console.log(name);
-                    data.forEach(slice => {console.log(slice.name);
+                    data.forEach(slice => {
+                      console.log(slice.name);
+
 
                       if (slice.name === name) {
+
                         slice.slice(true, true);
                         slice.graphic.attr({
                           opacity: 1,
@@ -644,6 +672,7 @@
                         slice.slice(false, true);
                         slice.graphic.attr({
                           opacity: 0.2,
+
                         });
                         // Unselect other slices
                       }
@@ -651,6 +680,7 @@
                     pieChart.redraw();
                   };
                 });
+
               })();
             </script>
           </div>
@@ -683,7 +713,7 @@
         <div class="col-md-12" style="margin:auto;left:0%;">
           <div style="padding: 15px;">
             <blockquote class="layui-elem-quote layui-text custom-quote" style="border-left: 5px solid #83962f;">
-              <b>伴生动物:</b>与大熊猫同域分布的主要大中型兽类和雉类63种，分布在四川、陕西、甘肃三个省。其中国家I级保护野生动物16种，国家II级保护野生动物25种。通过调查与其有竟食关系或会攻击大熊猫的物种进行大熊猫生存环境评估。<br />
+              <b>销量前十品牌不同能源车型占比:</b>乘联会公布了2023年汽车厂商销量情况，2023年12月乘用车市场零售销量为235.3万辆，同比增长8.5%，环比增长13.1%。从厂商零售销量排名来看，前十的车企分别为比亚迪、一汽-大众、上汽大众、吉利汽车、长安汽车、奇瑞汽车、东风日产、上汽通用五菱、一汽丰田和广汽丰田。<br />
             </blockquote>
           </div>
           <div id="part0302" style="height:520px;margin:auto;left:0%;"></div>
@@ -721,7 +751,7 @@
                     </div>
                   </div>
                   <div style="position: relative; width: 100%; height: auto;">
-                    <img src="assets/img/panda/ganguanfr.jpg" alt="感官丰容图片" id="food-enrichment-img"
+                    <img src="assets/img/panda/ganguanfr.jpg" alt="感官丰容图片" id="food-enrichment-img1"
                       style="width: 100%;">
                     <div
                       style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; color: rgb(206, 206, 206); font-size: 16px;">
@@ -729,21 +759,21 @@
                     </div>
                   </div>
                   <div style="position: relative; width: 100%; height: auto;">
-                    <img src="assets/img/panda/renzhifr.jpg" alt="认知丰容图片" id="food-enrichment-img" style="width: 100%;">
+                    <img src="assets/img/panda/renzhifr.jpg" alt="认知丰容图片" id="food-enrichment-img2" style="width: 100%;">
                     <div
                       style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; color: rgb(206, 206, 206); font-size: 16px;">
                       认知丰容
                     </div>
                   </div>
                   <div style="position: relative; width: 100%; height: auto;">
-                    <img src="assets/img/panda/shequnfr.jpg" alt="社群丰容图片" id="food-enrichment-img" style="width: 100%;">
+                    <img src="assets/img/panda/shequnfr.jpg" alt="社群丰容图片" id="food-enrichment-img3" style="width: 100%;">
                     <div
                       style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; color: rgb(206, 206, 206); font-size: 16px;">
                       社群丰容
                     </div>
                   </div>
                   <div style="position: relative; width: 100%; height: auto;">
-                    <img src="assets/img/panda/shiwufr.jpg" alt="食物丰容图片" id="food-enrichment-img" style="width: 100%;">
+                    <img src="assets/img/panda/shiwufr.jpg" alt="食物丰容图片" id="food-enrichment-img4" style="width: 100%;">
                     <div
                       style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; color: rgb(206, 206, 206); font-size: 16px;">
                       食物丰容
